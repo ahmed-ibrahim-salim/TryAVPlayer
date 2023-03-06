@@ -146,6 +146,9 @@ class ViewController: UIViewController {
         makePlayer()
         
         playVideo()
+        
+//        let env = Environment()
+        
 
     }
 

@@ -1,0 +1,12 @@
+//
+//  Production.xcconfig
+//  TryAVPlayer
+//
+//  Created by magdy khalifa on 06/03/2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+server_url       = "www.google.com/production"
+protocol         = "https"
