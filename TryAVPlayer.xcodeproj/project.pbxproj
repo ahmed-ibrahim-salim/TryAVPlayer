@@ -14,6 +14,7 @@
 		EFB4DB2329B4810500FB524B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFB4DB2229B4810500FB524B /* Assets.xcassets */; };
 		EFB4DB2629B4810500FB524B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB4DB2429B4810500FB524B /* LaunchScreen.storyboard */; };
 		EFB4DB2F29B481E100FB524B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EFB4DB2E29B481E100FB524B /* SnapKit */; };
+		EFF1A5F529B75FE900BCB8C5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1A5F429B75FE900BCB8C5 /* Errors.swift */; };
 		EFF36F5F29B5F533000AD69D /* Production.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFF36F5E29B5F532000AD69D /* Production.plist */; };
 		EFF36F6129B5F9AC000AD69D /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF36F6029B5F9AC000AD69D /* Environment.swift */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,7 @@
 		EFB4DB2229B4810500FB524B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFB4DB2529B4810500FB524B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFB4DB2729B4810500FB524B /* Development.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Development.plist; sourceTree = "<group>"; };
+		EFF1A5F429B75FE900BCB8C5 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		EFF36F5C29B5F433000AD69D /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		EFF36F5D29B5F44E000AD69D /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		EFF36F5E29B5F532000AD69D /* Production.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Production.plist; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				EFF36F5C29B5F433000AD69D /* Production.xcconfig */,
 				EFF36F5D29B5F44E000AD69D /* Development.xcconfig */,
 				EFF36F6029B5F9AC000AD69D /* Environment.swift */,
+				EFF1A5F429B75FE900BCB8C5 /* Errors.swift */,
 			);
 			path = TryAVPlayer;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFB4DB1E29B4810400FB524B /* ViewController.swift in Sources */,
+				EFF1A5F529B75FE900BCB8C5 /* Errors.swift in Sources */,
 				EFF36F6129B5F9AC000AD69D /* Environment.swift in Sources */,
 				EFB4DB1A29B4810400FB524B /* AppDelegate.swift in Sources */,
 				EFB4DB1C29B4810400FB524B /* SceneDelegate.swift in Sources */,

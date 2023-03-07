@@ -95,5 +95,5 @@ public struct Environment {
 
 // MARK: Usage
 
-print(Environment().configuration(PlistKey.ServerURL))
+//print(Environment().configuration(PlistKey.ServerURL))
 

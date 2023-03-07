@@ -149,6 +149,8 @@ class ViewController: UIViewController {
         
 //        let env = Environment()
         
+        guard let thisIs404 = Errors(rawValue: 404) else{fatalError("error not implemented")}
+        print(thisIs404)
 
     }
 
