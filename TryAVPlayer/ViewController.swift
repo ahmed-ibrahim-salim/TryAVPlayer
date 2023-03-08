@@ -147,16 +147,16 @@ class ViewController: UIViewController {
         
         playVideo()
         
-//        let env = Environment()
         
-        guard let thisIs404 = Errors(rawValue: 404) else{fatalError("error not implemented")}
-        print(thisIs404)
+        let stockSubject = StockPriceBroadcast()
         
+        let stockObserver = StockPriceObserver(id: "101")
+        let stockObserver2 = StockPriceObserver(id: "102")
+
+        stockSubject.registerObserver(observer: stockObserver)
+        stockSubject.registerObserver(observer: stockObserver2)
+
         
-        let vehicleFactory = VehicleFactory()
-        let bus = vehicleFactory.createVehicle(type: .bus)
-        print(bus.type)
-        bus.drive()
     }
 
     func makePlayer(){
