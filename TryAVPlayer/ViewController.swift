@@ -151,7 +151,10 @@ class ViewController: UIViewController {
         
         guard let thisIs404 = Errors(rawValue: 404) else{fatalError("error not implemented")}
         print(thisIs404)
-
+        
+        
+        let useInstance = UseInstance()
+        print(useInstance.playerSingleton?.name)
     }
 
     func makePlayer(){

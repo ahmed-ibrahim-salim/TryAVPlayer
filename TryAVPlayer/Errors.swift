@@ -9,7 +9,7 @@ import Foundation
 
 enum Errors: Int, CustomStringConvertible{
     
-    // init with int code
+    // init with status code
     case status401 = 401
     case status403 = 403
     case status404 = 404
