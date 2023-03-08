@@ -148,15 +148,14 @@ class ViewController: UIViewController {
         playVideo()
         
         
-        let stockSubject = StockPriceBroadcast()
-        
-        let stockObserver = StockPriceObserver(id: "101")
-        let stockObserver2 = StockPriceObserver(id: "102")
+        let raceCar = RaceCar()
 
-        stockSubject.registerObserver(observer: stockObserver)
-        stockSubject.registerObserver(observer: stockObserver2)
+        let tireDecorator = TireDecorator(transportable: raceCar)
 
+        let offRoadTireDecorator = OffRoadTireDecorator(transportable: tireDecorator)
         
+        print(offRoadTireDecorator.getSpeed())
+
     }
 
     func makePlayer(){

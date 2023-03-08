@@ -19,6 +19,8 @@
 		EFC299C629B8AA400023C80D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC299C529B8AA400023C80D /* Factory.swift */; };
 		EFC299C829B8AE320023C80D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC299C729B8AE320023C80D /* Session.swift */; };
 		EFC299CA29B8B2680023C80D /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC299C929B8B2680023C80D /* Observer.swift */; };
+		EFC299CC29B8BB280023C80D /* Adapter&Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC299CB29B8BB280023C80D /* Adapter&Strategy.swift */; };
+		EFC299CE29B8CEA60023C80D /* Decorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC299CD29B8CEA60023C80D /* Decorator.swift */; };
 		EFF1A5F529B75FE900BCB8C5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1A5F429B75FE900BCB8C5 /* Errors.swift */; };
 		EFF36F5F29B5F533000AD69D /* Production.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFF36F5E29B5F532000AD69D /* Production.plist */; };
 		EFF36F6129B5F9AC000AD69D /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF36F6029B5F9AC000AD69D /* Environment.swift */; };
@@ -38,6 +40,8 @@
 		EFC299C529B8AA400023C80D /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		EFC299C729B8AE320023C80D /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		EFC299C929B8B2680023C80D /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		EFC299CB29B8BB280023C80D /* Adapter&Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adapter&Strategy.swift"; sourceTree = "<group>"; };
+		EFC299CD29B8CEA60023C80D /* Decorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decorator.swift; sourceTree = "<group>"; };
 		EFF1A5F429B75FE900BCB8C5 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		EFF36F5C29B5F433000AD69D /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		EFF36F5D29B5F44E000AD69D /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				EFC299C529B8AA400023C80D /* Factory.swift */,
 				EFC299C729B8AE320023C80D /* Session.swift */,
 				EFC299C929B8B2680023C80D /* Observer.swift */,
+				EFC299CB29B8BB280023C80D /* Adapter&Strategy.swift */,
+				EFC299CD29B8CEA60023C80D /* Decorator.swift */,
 			);
 			path = DesignPattern;
 			sourceTree = "<group>";
@@ -188,7 +194,9 @@
 				EFC299BF29B89E2C0023C80D /* ViewController.swift in Sources */,
 				EFC299C129B89ED80023C80D /* Singleton.swift in Sources */,
 				EFC299C429B8A2C20023C80D /* Prototype.swift in Sources */,
+				EFC299CE29B8CEA60023C80D /* Decorator.swift in Sources */,
 				EFF1A5F529B75FE900BCB8C5 /* Errors.swift in Sources */,
+				EFC299CC29B8BB280023C80D /* Adapter&Strategy.swift in Sources */,
 				EFF36F6129B5F9AC000AD69D /* Environment.swift in Sources */,
 				EFB4DB1A29B4810400FB524B /* AppDelegate.swift in Sources */,
 				EFB4DB1C29B4810400FB524B /* SceneDelegate.swift in Sources */,

@@ -36,7 +36,7 @@ class StockPriceBroadcast: Subject{
             observers.append(observer)
 
             print("observer with id \(observer.id) is added to listeners")
-        } 
+        }
     }
     
     func removeObserver(observer: Observer) {
