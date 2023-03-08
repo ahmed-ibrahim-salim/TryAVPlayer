@@ -16,6 +16,7 @@
 		EFC299BF29B89E2C0023C80D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC299BE29B89E2C0023C80D /* ViewController.swift */; };
 		EFC299C129B89ED80023C80D /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC299C029B89ED80023C80D /* Singleton.swift */; };
 		EFC299C429B8A2C20023C80D /* Prototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC299C329B8A2C20023C80D /* Prototype.swift */; };
+		EFC299C629B8AA400023C80D /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC299C529B8AA400023C80D /* Factory.swift */; };
 		EFF1A5F529B75FE900BCB8C5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1A5F429B75FE900BCB8C5 /* Errors.swift */; };
 		EFF36F5F29B5F533000AD69D /* Production.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFF36F5E29B5F532000AD69D /* Production.plist */; };
 		EFF36F6129B5F9AC000AD69D /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF36F6029B5F9AC000AD69D /* Environment.swift */; };
@@ -32,6 +33,7 @@
 		EFC299BE29B89E2C0023C80D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EFC299C029B89ED80023C80D /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		EFC299C329B8A2C20023C80D /* Prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prototype.swift; sourceTree = "<group>"; };
+		EFC299C529B8AA400023C80D /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		EFF1A5F429B75FE900BCB8C5 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		EFF36F5C29B5F433000AD69D /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		EFF36F5D29B5F44E000AD69D /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				EFC299C029B89ED80023C80D /* Singleton.swift */,
 				EFC299C329B8A2C20023C80D /* Prototype.swift */,
+				EFC299C529B8AA400023C80D /* Factory.swift */,
 			);
 			path = DesignPattern;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC299C629B8AA400023C80D /* Factory.swift in Sources */,
 				EFC299BF29B89E2C0023C80D /* ViewController.swift in Sources */,
 				EFC299C129B89ED80023C80D /* Singleton.swift in Sources */,
 				EFC299C429B8A2C20023C80D /* Prototype.swift in Sources */,

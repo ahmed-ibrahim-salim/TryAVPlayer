@@ -153,8 +153,10 @@ class ViewController: UIViewController {
         print(thisIs404)
         
         
-        let useInstance = UseInstance()
-        print(useInstance.playerSingleton?.name)
+        let vehicleFactory = VehicleFactory()
+        let bus = vehicleFactory.createVehicle(type: .bus)
+        print(bus.type)
+        bus.drive()
     }
 
     func makePlayer(){
