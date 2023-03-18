@@ -141,23 +141,47 @@ class ViewController: UIViewController {
     // URL for the test video.
     private let videoURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
 
+    
+    let label = {
+        let label = ExpandableLabel()
+        label.fullText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia accumsan felis ac bibendum. Nunc dapibus magna vitae velit laoreet, vel tristique est posuere. Aliquam porta eget purus vel commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        label.numberOfLines = 3
+        label.maxHeight = label.font.lineHeight * 3
+        
+        label.readmoreFont = UIFont(name: "Helvetica-Oblique", size: 11.0)
+        label.readmoreFontColor = UIColor.blue        
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        makePlayer()
+//        makePlayer()
         
-        playVideo()
-        
-        
-        let raceCar = RaceCar()
+//        playVideo()
 
-        let tireDecorator = TireDecorator(transportable: raceCar)
-
-        let offRoadTireDecorator = OffRoadTireDecorator(transportable: tireDecorator)
+        makeExpandedLblAndSeeMoreAndAssignTabGesture()
         
-        print(offRoadTireDecorator.getSpeed())
-
+        
     }
-
+    
+    @objc func moreButtonTapped() {
+        label.toggleExpansion()
+    }
+    
+    func makeExpandedLblAndSeeMoreAndAssignTabGesture(){
+        label.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(moreButtonTapped))
+        label.addGestureRecognizer(tapGesture)
+        
+        view.addSubview(label)
+        
+        label.snp.makeConstraints({ make in
+            make.top.equalToSuperview().offset(100)
+            make.leading.trailing.equalToSuperview().inset(20)
+            
+        })
+        
+    }
     func makePlayer(){
         
         playerView = PlayerView()
@@ -180,3 +204,119 @@ class ViewController: UIViewController {
     }
 }
 
+
+
+extension String {
+    var localized: String {
+        return NSLocalizedString(self, comment: "T##String")
+    }
+}
+
+class ExpandableLabel: UILabel {
+
+    var isExpanded: Bool = false
+    var maxHeight: CGFloat = 0
+    
+    var readmoreFont = UIFont(name: "Helvetica-Oblique", size: 11.0)
+    var readmoreFontColor = UIColor.blue
+
+    var fullText: String?{
+        didSet{
+            if fullText!.count >= truncatedLength{
+
+                text = fullText
+                
+                DispatchQueue.main.async {
+                    self.addTrailing(with: "... ", moreText: "Readmore", moreTextFont: self.readmoreFont!, moreTextColor: self.readmoreFontColor)
+                }
+            }
+        }
+    }
+    private var truncatedLength = 100
+    private var isTruncated = true
+
+    private func collapse(){
+        
+        DispatchQueue.main.async {
+            self.addTrailing(with: "... ", moreText: "Read more", moreTextFont: self.readmoreFont!, moreTextColor: self.readmoreFontColor)
+        }
+        isTruncated = true
+    }
+
+    private func expand(){
+        // just do not delete these lines
+        let index = fullText!.index(fullText!.startIndex, offsetBy: (fullText!.count - 1))
+        self.text = fullText![...index].description + " Read less".localized
+        
+        DispatchQueue.main.async {
+            self.addTrailing(with: "", moreText: "Read less", moreTextFont: self.readmoreFont!, moreTextColor: self.readmoreFontColor)
+        }
+        isTruncated = false
+    }
+        
+    func toggleExpansion() {
+        isExpanded = !isExpanded
+        print("should expand",isExpanded)
+        
+        if isExpanded {
+            self.numberOfLines = 0
+            self.frame.size.height = self.intrinsicContentSize.height
+            
+            expand()
+            
+        } else {
+            self.numberOfLines = 3
+            self.frame.size.height = min(self.intrinsicContentSize.height, maxHeight)
+            collapse()
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
+        }
+    }
+}
+
+
+extension UILabel{
+    func addTrailing(with trailingText: String, moreText: String, moreTextFont: UIFont, moreTextColor: UIColor) {
+        let readMoreText: String = trailingText + moreText
+
+        let lengthForVisibleString: Int = self.vissibleTextLength
+        let mutableString: String = self.text!
+        let trimmedString: String? = (mutableString as NSString).replacingCharacters(in: NSRange(location: lengthForVisibleString, length: ((self.text?.count)! - lengthForVisibleString)), with: "")
+        let readMoreLength: Int = (readMoreText.count)
+        let trimmedForReadMore: String = (trimmedString! as NSString).replacingCharacters(in: NSRange(location: ((trimmedString?.count ?? 0) - readMoreLength), length: readMoreLength), with: "") + trailingText
+        let answerAttributed = NSMutableAttributedString(string: trimmedForReadMore, attributes: [NSAttributedString.Key.font: self.font])
+        let readMoreAttributed = NSMutableAttributedString(string: moreText, attributes: [NSAttributedString.Key.font: moreTextFont, NSAttributedString.Key.foregroundColor: moreTextColor])
+        answerAttributed.append(readMoreAttributed)
+        self.attributedText = answerAttributed
+    }
+
+    var vissibleTextLength: Int {
+        let font: UIFont = self.font
+        let mode: NSLineBreakMode = self.lineBreakMode
+        let labelWidth: CGFloat = self.frame.size.width
+        let labelHeight: CGFloat = self.frame.size.height
+        let sizeConstraint = CGSize(width: labelWidth, height: CGFloat.greatestFiniteMagnitude)
+
+        let attributes: [AnyHashable: Any] = [NSAttributedString.Key.font: font]
+        let attributedText = NSAttributedString(string: self.text!, attributes: attributes as? [NSAttributedString.Key : Any])
+        let boundingRect: CGRect = attributedText.boundingRect(with: sizeConstraint, options: .usesLineFragmentOrigin, context: nil)
+
+        if boundingRect.size.height > labelHeight {
+            var index: Int = 0
+            var prev: Int = 0
+            let characterSet = CharacterSet.whitespacesAndNewlines
+            repeat {
+                prev = index
+                if mode == NSLineBreakMode.byCharWrapping {
+                    index += 1
+                } else {
+                    index = (self.text! as NSString).rangeOfCharacter(from: characterSet, options: [], range: NSRange(location: index + 1, length: self.text!.count - index - 1)).location
+                }
+            } while index != NSNotFound && index < self.text!.count && (self.text! as NSString).substring(to: index).boundingRect(with: sizeConstraint, options: .usesLineFragmentOrigin, attributes: attributes as? [NSAttributedString.Key : Any], context: nil).size.height <= labelHeight
+            return prev
+        }
+        return self.text!.count
+    }
+}
