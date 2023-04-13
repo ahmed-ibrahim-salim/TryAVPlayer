@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75B0462D29E8204E002CF289 /* VideoPlayerViewWithCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B0462B29E8204E002CF289 /* VideoPlayerViewWithCaching.swift */; };
+		75B0462E29E8204E002CF289 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B0462C29E8204E002CF289 /* CacheManager.swift */; };
 		EFB4DB1A29B4810400FB524B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB4DB1929B4810400FB524B /* AppDelegate.swift */; };
 		EFB4DB1C29B4810400FB524B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB4DB1B29B4810400FB524B /* SceneDelegate.swift */; };
 		EFB4DB2129B4810400FB524B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB4DB1F29B4810400FB524B /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75B0462B29E8204E002CF289 /* VideoPlayerViewWithCaching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewWithCaching.swift; sourceTree = "<group>"; };
+		75B0462C29E8204E002CF289 /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		EFB4DB1629B4810400FB524B /* TryAVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryAVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB4DB1929B4810400FB524B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFB4DB1B29B4810400FB524B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75B0462A29E8204E002CF289 /* videoServiceWithCaching */ = {
+			isa = PBXGroup;
+			children = (
+				75B0462B29E8204E002CF289 /* VideoPlayerViewWithCaching.swift */,
+				75B0462C29E8204E002CF289 /* CacheManager.swift */,
+			);
+			path = videoServiceWithCaching;
+			sourceTree = "<group>";
+		};
 		EFB4DB0D29B4810400FB524B = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +95,7 @@
 		EFB4DB1829B4810400FB524B /* TryAVPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				75B0462A29E8204E002CF289 /* videoServiceWithCaching */,
 				EFC299C229B89EDC0023C80D /* Design-Patterns */,
 				EFB4DB1929B4810400FB524B /* AppDelegate.swift */,
 				EFB4DB1B29B4810400FB524B /* SceneDelegate.swift */,
@@ -193,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFC299C629B8AA400023C80D /* Factory.swift in Sources */,
+				75B0462E29E8204E002CF289 /* CacheManager.swift in Sources */,
 				EFC299CA29B8B2680023C80D /* Observer.swift in Sources */,
 				EFC299BF29B89E2C0023C80D /* ViewController.swift in Sources */,
 				EFC299C129B89ED80023C80D /* Singleton.swift in Sources */,
@@ -200,6 +215,7 @@
 				EFC299CE29B8CEA60023C80D /* Decorator.swift in Sources */,
 				EFF1A5F529B75FE900BCB8C5 /* Errors.swift in Sources */,
 				EFC299CC29B8BB280023C80D /* Adapter&Strategy.swift in Sources */,
+				75B0462D29E8204E002CF289 /* VideoPlayerViewWithCaching.swift in Sources */,
 				EFF36F6129B5F9AC000AD69D /* Environment.swift in Sources */,
 				EFB4DB1A29B4810400FB524B /* AppDelegate.swift in Sources */,
 				EFB4DB1C29B4810400FB524B /* SceneDelegate.swift in Sources */,
