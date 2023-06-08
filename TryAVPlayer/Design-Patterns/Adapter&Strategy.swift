@@ -57,7 +57,7 @@ class MediaPlayerAdapter: MediaPlayer {
 
 // media player now can use advanced player through the MediaPlayerAdapter
 class AudioPlayer: MediaPlayer {
-    
+    // delegation
     private var mediaAdapter: MediaPlayerAdapter?
 
     func play(_ audioType: AudioType, _ fileName: String){
