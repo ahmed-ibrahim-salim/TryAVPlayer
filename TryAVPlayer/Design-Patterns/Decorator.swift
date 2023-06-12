@@ -8,7 +8,7 @@
 import Foundation
 
 // https://vinileal.com/design%20patterns/design-patterns-swift-decorator/
-
+// allows you to add new functionality or modify existing behavior of an object by wrapping it with one or more decorator objects
 protocol SalaryCalculator {
     func calculateSalary(hourlyRate: Double) -> Double
 }
@@ -19,6 +19,8 @@ class ExampleSalaryCalculator: SalaryCalculator {
         hourlyRate * 40 * 5
     }
 }
+
+// and can add new behavior by implementing the same interface as the original object.
 
 // Decorators
 class TaxDiscountSalaryDecorator: SalaryCalculator {
@@ -56,6 +58,11 @@ class HealthCareDiscountSalaryDecorator: SalaryCalculator {
 
 //MARK: Usage
 
-let salaryCalculator = HealthCareDiscountSalaryDecorator(TaxDiscountSalaryDecorator(ExampleSalaryCalculator()))
+// original
+let originalSalarycalculator = ExampleSalaryCalculator()
 
-salaryCalculator.calculateSalary(hourlyRate: 40)
+// setup wrappers
+let healthAndTaxSalaryCalculator = HealthCareDiscountSalaryDecorator(TaxDiscountSalaryDecorator(originalSalarycalculator))
+
+// now wrap orginal with salary wrappers
+healthAndTaxSalaryCalculator.calculateSalary(hourlyRate: 40)
